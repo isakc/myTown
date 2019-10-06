@@ -1,0 +1,24 @@
+/* dante box */
+.graf--p {
+    margin-bottom:10px;
+}
+.graf--figure {
+    margin-bottom:10px;
+}
+.aspectRatioPlaceholder {
+    margin:0;
+}
+.section-content {
+    padding: 10px;
+}
+.postArticle .layoutSingleColumn {
+    width: 957px;
+    margin-left: 110px;
+    padding: 10px;
+    font-family: "NotoSansKR",sans-serif;
+    min-height: 400px;
+    box-shadow: 0 0 5px #424242;
+}
+.postField--body {
+    margin-bottom: 10px;
+}

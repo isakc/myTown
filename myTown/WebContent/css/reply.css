@@ -1,0 +1,338 @@
+@CHARSET "UTF-8";
+
+        #reply {
+            width: 1080px;
+            margin:auto;
+        }
+        #myReply {
+            width:1020px;
+            height:220px;
+            padding:20px;
+            border-radius:30px;
+            box-shadow: 0 0 10px #424242;
+            margin: 20px auto 10px;
+            position:relative;
+        }
+        #myPhoto {
+        	width:100px;
+            height:200px;
+            float:left;
+            position:relative;
+        }
+        #myPhoto>img {
+            border-radius:40px;
+        }
+	
+        #myReply .my_content {
+            width: 830px;
+            height:100px;
+            float:left;
+        }
+        
+        
+        
+        #tagBox{
+            width: 830px;
+            min-height: 22px;
+            margin-bottom:7px;
+            position:relative;
+        }
+        #tagBox>h3 {
+        	font-size:20px;
+            font-weight:500;
+            float:left;
+        }
+        #tagList{
+            margin-left:10px;
+        	width: 728.5px;
+            height:22px;
+            overflow: hidden;
+            float:left;
+        }
+        .tag{
+	         height:20px;
+	         line-height:20px;
+	         background:#FFC107;
+	         display:inline-block;
+	         border-radius: 10px;
+	         font-size: 16px;
+	         vertical-align:middle;
+	         margin-left:5px;
+        }
+        
+        #tagInput{   
+	         display:inline-block;
+	         min-width:120px;
+	         height:18px;
+	         line-height:18px;
+	         border-radius:10px;   
+	         border:1px solid #424242;
+	         outline: none;
+	         overflow: hidden;
+	         vertical-align: middle;
+	         text-align:center;
+        }
+        
+        .delete{
+	         background: transparent;
+	         border:0;
+	         outline: none;
+	         cursor:pointer;
+	         font-size: 10px;
+      }
+
+        
+        .content {
+        	width:828px;
+        	height:80px;
+        	resize: none;
+        }
+    /* my reply top css */
+
+        .my_img_box{
+            width: 832px;
+            height: 118px;
+            padding-top:20px;
+            float:left;
+            position: relative;
+        }
+        .my_img_box .imgs {
+            width: 800px;
+            height: 98px;
+            position: absolute;
+            left: 15px;
+            overflow: hidden;
+        }
+        .my_img_box .imgs ul {
+            width: 1000%;
+            height: 98px;
+            position: relative;
+            left: 0;
+            transition: .2s ease;
+        }
+        #representationBox{
+            width: 98px;
+            height: 98px;
+            backface-visibility: hidden;
+            transition:.2s ease;
+        }
+        .my_img_box li {
+            width: 98px;
+            height: 98px;
+            float: left;
+            margin-left: 2px;
+        }
+        .my_img_box img {
+            width: 98px;
+            height: 98px;
+            border-radius:10px;
+        }
+        .my_img_box i {
+            background: #F0E5DE;
+            width: 98px;
+            height: 98px;
+            float: left;
+            text-align: center;
+            line-height: 98px;
+            border-radius:10px;
+            cursor: pointer;
+        }
+        .my_img_box .arrow {
+            background: #FFFFFF;
+            width: 15px;
+            height: 50px;
+            margin-top:25px;
+            border: none;
+            text-align: center;
+            line-height: 50px;
+            cursor: pointer;
+            background:#D9D4CF;
+            position: absolute;
+        }
+        
+        .my_img_box .right {
+            margin-left:2px;
+            right: 0;
+        }
+
+        #myReply .btn.insert {
+            position:absolute;
+            bottom:20px;
+            right:25px;
+            width: 60px;
+            height: 34px;
+            border: none;
+            box-shadow: 0 0 5px #424242;
+            border-radius: 5px;
+            cursor: pointer;
+            background:#fff;
+        }
+    /* my image box css */
+    
+    /*your reply */
+   		#yourReply>ul>li {
+            width:1080px;
+            margin:40px 0;
+            /*overflow: hidden;*/
+        }
+        .reply_header {
+        	width:1080px;
+        	height:100px;
+        	border-bottom:1px solid #424242;
+        	font-family:'Noto Sans KR', sans-serif;
+        }
+        #yourPhoto {
+        	width:100px;
+        	height:100px;
+        	float:left;
+        }
+        #yourPhoto>img {
+        	width:80px;
+        	height:80px;
+        	border-radius:40px;
+        	margin:10px;
+        }
+        #nameNdate{
+        	width:780px;
+        	height:100px;
+        	margin-left:20px;
+        	float:left;
+        }
+        .yourHashtag {
+        	width:780px;
+        	height:20px;
+        	float:left;
+        	font-size:20px;
+        	font-weight:500;
+        	color:#3b8686;
+        }
+       
+        .like{
+        	width:100px;
+        	height:100px;
+        	float:left;
+        	margin-left:80px;
+        }
+        .yourName {
+        	font-size:30px;
+        	font-weight:900;
+        	margin: 5px 0 10px 0 ;
+        }
+        .regdate {
+        	font-size:16px;
+        	color:#548687;
+        	margin-top:5px;
+        }
+        .like .r_icon {
+        	width: 100px;
+            height: 70px;
+            
+            border:none;
+            cursor:pointer;
+            background:#fff;
+        }
+		.r_icon i {
+			font-size:50px;
+			color:#3b8686;
+			line-height:90px;
+            text-align: center;
+		}
+		.like .r_num {
+			width:100px;
+			height:30px;
+			font-size:20px;
+			font-weight:900;
+			color:#3b8686;
+			text-align:center;
+		}
+		/*여기까지 header*/
+	
+		.your_content {
+			width: 1050px;
+            min-height: 60px;
+            padding: 15px 5px;
+            line-height:25px;
+		}
+		/*여기까지 content*/
+		
+		/*사진박스*/
+		 .your_img_box {
+            width: 1012px;
+            height: 118px;
+            margin-bottom: 15px;
+            margin-left:34px;
+            position: relative;
+        }
+        .imgs {
+            width: 960px;
+            height: 118px;
+            float:left;     
+            overflow: hidden;
+            position: absolute;
+            left:25px;
+        }
+         .your_img_box ul {
+            width: 1000%;
+            height: 118px;
+            transition: .2s ease;
+            position: relative;
+            left: 0;
+        }
+        .your_img_box ul li {
+            width: 118px;
+            height: 118px;
+            margin-left: 2px;
+            float: left;
+        }
+        .your_img_box ul img {
+            width: 118px;
+            height: 118px;
+            border-radius:20px;
+        }
+
+        #yourReply .your_img_box .arrow {
+            background: #D9D4CF;
+            width: 25px;
+            height: 60px;
+            margin-top:30px;
+            border: none;
+            text-align: center;
+            line-height: 30px;
+            cursor: pointer;
+            float:left;
+            position:absolute;
+        }
+       
+        #yourReply .your_img_box .right {
+            margin-left:2px;
+            right: 0;
+        }
+        .btn_box .btn {
+      		border: none;
+            box-shadow: 0 0 5px #424242;
+            border-radius: 5px;
+            cursor: pointer;
+            background:#fff;
+            margin-right:5px;
+            width:40px;
+            height:20px;
+            font-size:12px;
+            text-aline:center;
+            line-height:20px;
+        }
+		/*버튼*/
+		.btn_box {
+			width:1080px;
+			height:20px;
+			padding:5px 0;
+			text-align:right;
+			border-top:1px solid #424242;
+		}
+		
+		.r_icon i.reLike {
+			color :#f199bc;
+		}
+		.like .r_num span.reLike {
+			color :#f199bc;
+		}
+		

@@ -1,0 +1,199 @@
+#rSpotBox{
+            width: 1080px;
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+
+        #foodTown{
+            width: 1080px;
+            position: relative;
+            display: none;
+        }
+
+        #foodTown.on{
+            display: block;
+        }
+
+        #playTown{
+            width: 1080px;
+            position: relative;
+            display: none;
+        }
+
+        #playTown.on{
+            display: block;
+        }
+
+        .setLabel{
+            font-size: 40px;
+            font-weight: 500;
+        }
+
+        .spotList{
+            width: 1020px;
+            position: relative;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        .posts li {
+            float: left;
+            padding: 10px;
+            padding-left: 0;
+        }
+
+        .post{
+            width: 330px;
+            height: 250px;
+            border-radius: 50px;
+            position: relative;
+        }
+
+        .postTop{
+            width: 330px;
+            height: 70px;
+            border-top-left-radius: 30px;
+            border-top-right-radius: 30px;
+        }
+
+        .foodPostTop{
+            background-color: #AED581;
+        }
+
+        .playPostTop{
+            background-color: #a19fff;
+        }
+
+        .grade{
+            width: 52px;
+            height: 52px;
+            border-radius: 26px;
+            text-align: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: #fff;
+            margin-top: 8px;
+            margin-right: 4px;
+            margin-left: 4px;
+        }
+
+        .grade .fa-star{
+            font-size: 25px;
+            color: #FFEB3B;
+        }
+
+        .grade em{
+            font-size: 20px;
+            font-weight: 900;
+        }
+
+        .text{
+            width: 220px;
+            height: 70px;
+            position: relative;
+            top: 0;
+            left: 60px;
+        }
+
+        .text h4{
+            display:inline-block;
+            width: 200px;
+            height: 50px;
+            line-height: 50px;
+            font-size: 20px;
+            font-weight: 900;
+            position: absolute;
+            top: 0;
+            left: 10px;
+        }
+
+        .text h4>a{
+            text-decoration: none;
+            color: black;
+            white-space: nowrap;
+            overflow:hidden;
+            text-overflow:ellipsis;
+            display: inline-block;
+            max-width: 160px;
+            vertical-align: middle;
+        }
+
+        .text h4>a:hover{
+            text-decoration: underline;
+        }
+
+        .bookmark{
+            color: #ff2d4a;
+            font-size: 30px;
+            vertical-align: middle;
+        }
+
+        .post .text .bookmark:hover{
+            cursor: pointer;
+        }
+
+        .spotHashTag{
+            width: 220px;
+            height: 20px;
+            position: absolute;
+            top: 35px;
+            left: 10px;
+        }
+
+        .postProfile{
+            width: 50px;
+            height: 70px;
+            position: absolute;
+            top: 8px;
+            right: 8px;
+        }
+
+        .postProfile img{
+            width: 55px;
+            height: 55px;
+            position: absolute;
+            top: 0;
+            right: 0;
+            transition: 0.2s ease;
+            border-radius: 50px;
+        }
+
+        .post:hover .postProfile .jumin{
+            width: 20px;
+            height: 20px;
+        }
+
+        .post:hover{
+            box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24),
+            0 17px 50px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        .imageBox{
+            width: 330px;
+            height: 180px;
+            position: absolute;
+            top: 70px;
+            left: 0;
+            border-radius: 300px;
+            background: #fff;
+        }
+
+        .imageBox img{
+            width: 330px;
+            height: 180px;
+            border-bottom-right-radius: 50px;
+            border-bottom-left-radius: 50px;
+        }
+
+        .paging {
+            margin-top: 20px;
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 30px;
+            cursor: pointer;
+        }
+
+        .paging .pageOne:hover{
+            color: lightblue;
+        }

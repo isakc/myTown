@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC 
+"-//mybatis.org/DTD/Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="menu">
+
+<select id="selectMenuPrice" resultType="int" parameterType="int">
+		SELECT FLOOR(AVG(price))
+		FROM menu
+		WHERE spotNo=#{spotNo}
+	</select>
+	
+	<select id="selectMenu" resultType="MenuVo" parameterType="int">
+		SELECT no,spotNo, name, price, regdate
+		FROM menu
+		WHERE spotNo=#{spotNo}
+	</select>
+	
+	<insert id="insertMenu" parameterType="MenuVo">
+		INSERT INTO menu(no,spotNo, name, price, regdate)
+		VALUES (menu_seq.nextval,#{spotNo},#{name},#{price},sysdate)
+	</insert>
+</mapper>

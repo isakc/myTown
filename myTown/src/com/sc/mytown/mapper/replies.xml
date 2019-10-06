@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC 
+"-//mybatis.org/DTD/Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="replies">
+
+	<select id="selectReplyPage" parameterType="PageVo" resultType="ReplyVo">
+		SELECT no, contents, contentNo, userNo, typeNo, regdate
+		FROM(SELECT no, contents, contentNo, userNo, typeNo, regdate, rownum r
+		FROM(SELECT no, contents, contentNo, userNo, typeNo, regdate
+		FROM replies
+		WHERE contentNo=#{contentNo}
+		ORDER BY no DESC))
+		WHERE r BETWEEN #{start} AND #{end}
+	</select>
+
+	<select id="selectReplyListsm" parameterType="int" resultType="ReplyVo">
+		select no, contents, contentNo, userNo, typeNo, regDate
+		from replies
+		where contentNo=#{contentNo} and typeNo=1
+		ORDER BY regdate DESC
+	</select>
+	<select id="selectReplyListsa" resultType="ReplyVo" parameterType="int">
+		SELECT no, contents, contentNo, userNo, typeNo, regDate
+		FROM replies
+		WHERE userNo IN (
+					SELECT userNo
+					FROM townstalks
+					WHERE userNo=#{userNo} AND typeNo=2)
+	</select>
+	
+	<insert id="insertReply" parameterType="ReplyVo">
+		<selectKey keyProperty="no" order="BEFORE" resultType="int">
+			SELECT replies_seq.nextval
+			FROM dual
+		</selectKey>
+		INSERT INTO replies(no,contentNo,userNo,typeNo,regdate,contents)
+		VALUES (#{no},#{contentNo},#{userNo},1,sysdate,#{contents})
+	</insert>
+	
+	
+	<select id="selectReplyOne" resultType="int" parameterType="int">
+		SELECT no, contents, contentNo, userNo, typeNo, regDate
+		FROM replies
+		where contentNo=#{contentNo} AND typeNo = 2
+	</select>
+
+</mapper>

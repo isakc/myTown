@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC 
+"-//mybatis.org/DTD/Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="hashtags">
+
+<select id="selectHashtags" resultType="HashTagVo" parameterType="int">
+		SELECT no, tag, tagtype, regDate
+		FROM hashtags
+		WHERE no IN (
+					SELECT hashtagNo
+					FROM addhashtags
+					WHERE contentNo=#{contentNo} AND typeNo=1)
+		ORDER BY no
+	</select>
+	
+	<select id="selectReviewHashtags" resultType="HashTagVo" parameterType="HashTagVo">
+		SELECT no, tag, tagtype, regdate
+		FROM hashtags
+		WHERE no IN (
+					SELECT hashtagNo
+					FROM addhashtags
+					WHERE contentNo=#{contentNo} AND reviewNo=#{reviewNo} AND typeNo=1)
+	</select>
+	
+	<select id="selectBytag" resultType="Integer" parameterType="String">
+		SELECT no
+		FROM hashtags
+		WHERE tag=#{tag}
+	</select>
+
+	<insert id="insertTag" parameterType="String">
+		INSERT INTO hashtags(no, tag, tagType, regdate)
+		VALUES (hashtags_seq.nextval,#{tag},8,sysdate)
+	</insert>
+	
+	
+   <select id="selectPostsHashTags" parameterType="int" resultType="hashTagVo">
+	SELECT *
+	FROM hashtags
+	WHERE no in (
+				SELECT hashtagno
+				FROM addhashtags
+				WHERE contentNo = #{contentNo}
+				AND typeno = 1)
+	AND tagtype = 8
+	AND rownum BETWEEN 1 AND 2
+	</select>
+	
+	<select id="selectSecondCategory" resultType="hashTagVo">
+		SELECT no, tag, tagtype, regdate
+		FROM hashtags
+		WHERE tagtype=7
+	</select>
+	
+	<select id="selectByTag" parameterType="String" resultType="hashTagVo">
+		SELECT no, tag, tagtype, regdate
+		FROM hashtags
+		WHERE tag = #{tag}
+	</select>
+	
+	<select id="selectByStringTag" parameterType="String" resultType="Integer">
+		SELECT no
+		FROM hashtags
+		WHERE tag = #{tag}
+	</select>
+	
+	<insert id="insertHashTag" parameterType="HashTagVo">
+		INSERT INTO hashTags(no, tag, tagtype, regdate)
+		VALUES(hashTags_seq.nextval, #{tag}, 8, sysdate)
+	</insert>
+
+</mapper>

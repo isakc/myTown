@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC 
+"-//mybatis.org/DTD/Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="grades">
+
+<select id="selectGradeCount" resultType="int" parameterType="int">
+		SELECT COUNT(no)
+		FROM grades
+		WHERE spotNo=#{spotNo}
+	</select>
+	
+	<select id="selectGrade" resultType="int" parameterType="int">
+		SELECT AVG(grade)
+		FROM grades
+		WHERE spotNo=#{spotNo}
+	</select>
+
+	<select id="selectGradeSpot" resultType="double" parameterType="int">
+		SELECT avg(grade)/2
+		FROM grades
+		WHERE spotNo = #{spotNo}
+		GROUP BY spotNo
+	</select>
+
+</mapper>

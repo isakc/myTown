@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC 
+"-//mybatis.org/DTD/Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="users">
+
+<select id="selectList" parameterType="PageVo" resultType="SpotVo">
+      SELECT  no, id, nickname, password, gender, birth, job, profile, fstZipcode, fstAdd, fstdetailAdd, secZipcode, secAdd, secdetailAdd, guNo, dongNo, subGuNo, subDongNo, regDate
+      FROM(SELECT  no, id, nickname, password, gender, birth, job, profile, fstZipcode, fstAdd, fstdetailAdd, secZipcode, secAdd, secdetailAdd, guNo, dongNo, subGuNo, subDongNo, regDate, rownum r
+          FROM(SELECT  no, id, nickname, password, gender, birth, job, profile, fstZipcode, fstAdd, fstdetailAdd, secZipcode, secAdd, secdetailAdd, guNo, dongNo, subGuNo, subDongNo, regDate
+              FROM users
+               ORDER BY no DESC))
+      WHERE r BETWEEN #{start} AND #{end}
+   </select>
+
+   <select id="selectTotal" resultType="int">
+      SELECT COUNT(no)
+      FROM users
+   </select>
+
+	
+
+	<select id="loginUserCheck" resultType="UserVo" parameterType="UserVo">
+		SELECT no, id, nickname, password, gender, birth, job, profile, fstZipcode, fstAdd, fstdetailAdd, secZipcode, secAdd, secdetailAdd, guNo, dongNo, subGuNo, subDongNo, regDate
+		FROM users
+		WHERE id = #{id} AND password = #{password}
+	</select>
+
+	<select id="selectByFounderNo" parameterType="int" resultType="UserVo">
+		SELECT no, id, nickname, password, gender, birth, job, profile, fstZipcode, fstAdd, fstdetailAdd, secZipcode, secAdd,
+		secdetailAdd, guNo, dongNo, subGuno, subDongNo, regdate
+		FROM users
+		WHERE no = #{founderNo}
+	</select>
+
+
+	<select id="selectUserOne" resultType="UserVo" parameterType="int">
+		SELECT no, id, nickname, password, gender, birth, job, profile, fstZipcode, fstAdd, fstdetailAdd, secZipcode, secAdd, secdetailAdd, guNo, dongNo, subGuNo, subDongNo, regDate
+		FROM users
+		WHERE no=#{no}
+	</select>
+	
+	<update id="updateUser" parameterType="UserVo">
+	UPDATE users 
+	SET  nickname=#{nickname}, password=#{password}, gender=#{gender}, birth=#{gender}, job=#{job}, profile=#{profile}, fstZipcode=#{fstZipcode}, fstAdd=#{fstAdd}, fstdetailAdd=#{fstdetailAdd}, secZipcode=#{secZipcode}, secAdd=#{secAdd}, secdetailAdd=#{secdetailAdd}
+	WHERE no = #{no}
+	</update>
+	
+	<select id="selectCheckNickname" resultType="int" parameterType="String">
+		SELECT COUNT(nickname)
+		FROM users
+		WHERE nickname = #{nickname}
+	</select>
+
+</mapper>

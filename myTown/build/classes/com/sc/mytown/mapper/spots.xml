@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC 
+"-//mybatis.org/DTD/Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="spots">
+
+
+	<select id="selectSpotOne"  resultType="SpotVo" parameterType="int">
+		SELECT no, name, zipcode, address, detailAdd, typeNo, repPicture, description, 
+		       tell, openTime, site, wifi, parking, delivery, argPrice, 
+		       founderNo, guNo, dongNo, lat, lng, regDate
+		FROM Spots
+		WHERE no=#{no}
+	</select>
+	
+	<select id="selectNearSpot" resultType="SpotVo" parameterType="SpotVo">
+		SELECT no, name, zipcode, address, detailAdd, typeNo, repPicture, description, 
+		       tell, openTime, site, wifi, parking, delivery, argPrice, 
+		       founderNo, guNo, dongNo, lat, lng, regDate
+		FROM Spots
+		WHERE guNo=#{guNo} AND dongNo=#{dongNo} AND typeNo=#{typeNo}
+	</select>
+	
+	<update id="updateSpotPrice" parameterType="SpotVo">
+		UPDATE spots
+		SET argPrice=#{argPrice}
+		WHERE no=#{no}
+	</update>
+	
+
+	<select id= "spotsSelectList" parameterType="PageVO" resultType= "SpotVo">
+	    <![CDATA[
+		SELECT no, zipcode, typeNo, argPrice, founderNo, guNo, dongNo, lat, lng, name, address, detailAdd, 
+		       repPicture, description, tell, openTime, site, wifi, parking, delivery, regDate
+		FROM(
+			SELECT no, zipcode, typeNo, argPrice, founderNo, guNo, dongNo, lat, lng, name, address, detailAdd, 
+			       repPicture, description, tell, openTime, site, wifi, parking, delivery, regDate, rownum r
+			FROM(
+				SELECT no, zipcode, typeNo, argPrice, founderNo, guNo, dongNo, lat, lng, name, address, detailAdd, 
+				       repPicture, description, tell, openTime, site, wifi, parking, delivery, regDate
+				FROM spots
+				WHERE typeno = #{typeNo}
+				AND guNo = #{addressNo}
+				AND name LIKE '%'||#{query}||'%'
+				AND NVL(argPrice,0) <= #{argPrice}
+				ORDER BY no DESC
+			)
+		)
+		WHERE r BETWEEN #{start} AND #{end}
+		]]>
+	</select>
+	
+	<select id= "selectTotalsung" parameterType="PageVo" resultType="int">
+	    <![CDATA[
+		SELECT COUNT(no)
+		FROM spots
+		WHERE typeno= #{typeNo}
+		AND guNo = #{addressNo}
+		AND name LIKE '%'||#{query}||'%'
+		AND NVL(argPrice,0) <= #{argPrice}
+		]]>
+	</select>
+	
+	<insert id="insertSpot" parameterType="SpotVo">
+		<selectKey resultType="int" keyProperty="no" order="BEFORE">
+			SELECT spots_seq.nextval
+			FROM dual
+		</selectKey>
+		INSERT INTO spots(no, name, zipcode, address, detailAdd, typeNo, reppicture, description, tell, opentime,
+		site, wifi, parking, delivery, founderno, guno, dongno, lat, lng, regdate)
+		VALUES(#{no}, #{name}, #{zipcode}, #{address}, null, 3, #{repPicture},
+		#{description}, #{tell}, #{openTime}, #{site}, #{wifi}, #{parking}, #{delivery}, #{founderNo}, #{guNo},
+		#{dongNo}, #{lat}, #{lng}, sysdate)
+	</insert>
+
+	<select id="selectGradeList" resultType="SpotVo" parameterType="int">
+		SELECT no, name, zipcode, address, detailAdd, typeNo, repPicture, description, tell, openTime, site, wifi, parking, delivery, argPrice, founderNo, guNo, dongNo, lat, lng, regDate
+		FROM spots
+		WHERE no IN
+			  (SELECT grade
+			   FROM grades
+			   WHERE userNo = #{userNo}) 
+	</select>
+	
+	<select id="selectReplyList" resultType="SpotVo" parameterType="int">
+		SELECT no, name, zipcode, address, detailAdd, typeNo, repPicture, description, tell, openTime, site, wifi, parking, delivery, argPrice, founderNo, guNo, dongNo, lat, lng, regDate
+		FROM spots
+		WHERE no IN
+			  (SELECT contentNo
+			   FROM replies
+			   WHERE userNo = #{userNo}) 
+	</select>
+	
+	<select id="selectSpotList" parameterType="PageVo" resultType="SpotVo">
+		SELECT  no, name, zipcode, address, detailAdd, typeNo, repPicture, description, tell, openTime, site, wifi, parking, delivery, argPrice, founderNo, guNo, dongNo, lat, lng, regDate
+		FROM(SELECT  no, name, zipcode, address, detailAdd, typeNo, repPicture, description, tell, openTime, site, wifi, parking, delivery, argPrice, founderNo, guNo, dongNo, lat, lng, regDate, rownum r
+			 FROM(SELECT  no, name, zipcode, address, detailAdd, typeNo, repPicture, description, tell, openTime, site, wifi, parking, delivery, argPrice, founderNo, guNo, dongNo, lat, lng, regDate
+				  FROM spots
+				  WHERE founderNo=#{founderNo} 
+			 	  ORDER BY no DESC))
+		WHERE r BETWEEN #{start} AND #{end}
+	</select>
+	
+	<select id="selectList" parameterType="PageVo" resultType="SpotVo">
+		SELECT  no, name, zipcode, address, detailAdd, typeNo, repPicture, description, tell, openTime, site, wifi, parking, delivery, argPrice, founderNo, guNo, dongNo, lat, lng, regDate
+		FROM(SELECT  no, name, zipcode, address, detailAdd, typeNo, repPicture, description, tell, openTime, site, wifi, parking, delivery, argPrice, founderNo, guNo, dongNo, lat, lng, regDate, rownum r
+			 FROM(SELECT  no, name, zipcode, address, detailAdd, typeNo, repPicture, description, tell, openTime, site, wifi, parking, delivery, argPrice, founderNo, guNo, dongNo, lat, lng, regDate
+				  FROM spots
+			 	  ORDER BY no DESC))
+		WHERE r BETWEEN #{start} AND #{end}
+	</select>
+	
+	<select id="selectTotal" resultType="int">
+		SELECT COUNT(no)
+		FROM spots
+	</select>
+	
+	<select id="selectPicList" resultType="SpotVo" parameterType="int">
+		SELECT no, repPicture
+		FROM spots
+		WHERE no = #{no}
+	</select>
+	
+	<select id="spotStamps" parameterType="PageVo" resultType = "SpotVo">
+	SELECT  no, name, zipcode, address, detailAdd, typeNo, repPicture, description, tell, openTime, site, wifi, parking, delivery, argPrice, founderNo, guNo, dongNo, lat, lng, regDate
+		FROM(SELECT  no, name, zipcode, address, detailAdd, typeNo, repPicture, description, tell, openTime, site, wifi, parking, delivery, argPrice, founderNo, guNo, dongNo, lat, lng, regDate, rownum r
+			 FROM(SELECT  no, name, zipcode, address, detailAdd, typeNo, repPicture, description, tell, openTime, site, wifi, parking, delivery, argPrice, founderNo, guNo, dongNo, lat, lng, regDate
+				  FROM spots
+				  WHERE no in(select contentNo
+							  from stamps
+  							  where userNo=#{userNo})
+			 	  ORDER BY no DESC))
+		WHERE r BETWEEN #{start} AND #{end}
+	</select>
+
+</mapper>

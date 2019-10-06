@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC 
+"-//mybatis.org/DTD/Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="pictures">
+
+<select id="selectPictures" resultType="PictureVo" parameterType="int">
+		SELECT no, picture, contentNo, reviewNo, typeNo, regDate
+		FROM pictures
+		WHERE contentNo=#{contentNo} AND typeNo=1
+	</select>
+	
+	<select id="selectReplyPictures" resultType="PictureVo" parameterType="int">
+		SELECT no, picture, contentNo, reviewNo, typeNo, regDate
+		FROM pictures
+		WHERE contentNo=#{contentNo} AND reviewNo=#{reviewNo} AND typeNo=1 
+	</select>
+
+	<insert id="insertRePicture" parameterType="PictureVo">
+		INSERT INTO pictures(no, picture, contentNo, reviewNo, typeNo, regDate)
+		VALUES (pictures_seq.nextval,#{picture},#{contentNo},#{reviewNo},1,sysdate)
+	</insert>
+</mapper>

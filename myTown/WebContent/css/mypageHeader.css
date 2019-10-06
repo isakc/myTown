@@ -1,0 +1,40 @@
+@CHARSET "UTF-8";
+
+ #mypageHeader {
+            width: 1080px;
+            height: 201px;
+            border-bottom: 1px solid #cccccc ;
+            margin: auto;
+        }
+
+        #myPageIcon{
+            width: 680px;
+            height: 170px;
+            float: left;
+            margin-top: 30px;
+            margin-left: 30px;
+        }
+
+        #leftSideBar {
+            width: 185px;
+            height: 200px;
+            float: left;
+        }
+
+        #rightSideBar {
+            width: 185px;
+            height: 200px;
+            float: left;
+        }
+
+
+        #myPageIcon .myPageImg img{
+            width: 100px;
+            height: 100px;
+            border: 1px solid #cccccc;
+            border-radius: 100px;
+            padding: 5px;
+            float: left;
+            margin: 10px;
+            cursor: pointer;
+        }

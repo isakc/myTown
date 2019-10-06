@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC 
+"-//mybatis.org/DTD/Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="likes">
+
+	<select id="selectLikeOne" resultType="int" parameterType="int">
+		SELECT COUNT(*) likes
+		FROM likes
+		where contentNo=#{contentNo} AND typeNo = 2
+	</select>
+	
+	<select id="selectReviewLike" parameterType="int" resultType="int">
+		SELECT COUNT(NO)
+		FROM likes
+		WHERE contentNo=#{contentNo} AND typeNo=5
+	</select>
+	
+	<select id="selectLike" resultType="int" parameterType="LikeVo">
+		SELECT COUNT(no)
+		FROM likes
+		WHERE contentNo=#{contentNo} AND userNo=#{userNo} AND typeNo = 5
+	</select>
+	
+	<select id="insertLike" resultType="int" parameterType="LikeVo">
+		INSERT INTO likes(no, userNo, typeNo,contentNo, regDate)
+		VALUES (likes_seq.nextval,#{userNo},5,#{contentNo},sysdate)
+	</select>
+	
+	<select id="deleteLike" resultType="int" parameterType="LikeVo">
+		DELETE likes
+		WHERE contentNo=#{contentNo} AND userNo=#{userNo} AND typeNo = 5
+	</select>
+	
+
+</mapper>

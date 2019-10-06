@@ -1,0 +1,138 @@
+#reply {
+	width: 1080px;
+	margin: auto;
+}
+
+#myReply {
+	width: 1020px;
+	height: 200px;
+	padding: 20px;
+	border-radius: 30px;
+	box-shadow: 0 0 10px #424242;
+	margin: 20px auto 10px;
+	position: relative;
+}
+
+#myPhoto {
+	width: 100px;
+	height: 200px;
+	float: left;
+	position: relative;
+}
+
+#myPhoto>img {
+	border-radius: 40px;
+}
+
+#myReply .my_content {
+	width: 830px;
+	height: 100px;
+	float: left;
+}
+
+.myhashtags {
+	width: 830px;
+	height: 20px;
+	margin-bottom: 10px;
+	position: relative;
+}
+
+.myhashtags>span {
+	font-size: 20px;
+	font-weight: 500;
+}
+
+.myhashtags>input {
+	margin-left: 10px;
+	width: 728.5px;
+	height: 20px;
+	position: absolute;
+	top: 0;
+}
+
+.content {
+	width: 826px;
+	height: 80px;
+	resize: none;
+}
+/* my reply top css */
+.my_img_box {
+	width: 832px;
+	height: 118px;
+	padding-top: 20px;
+	float: left;
+	position: absolute;
+	left:120px;
+	bottom: 0;
+}
+
+.my_img_box .imgs {
+	width: 800px;
+	height: 98px;
+	position: absolute;
+	left: 15px;
+	overflow: hidden;
+}
+
+.my_img_box .imgs ul {
+	width: 1000%;
+	height: 98px;
+	position: relative;
+	left: 0;
+	transition: .2s ease;
+}
+
+.my_img_box li {
+	width: 98px;
+	height: 98px;
+	float: left;
+	margin-left: 2px;
+}
+
+.my_img_box img {
+	width: 98px;
+	height: 98px;
+	border-radius: 10px;
+}
+
+.my_img_box i {
+	background: #F0E5DE;
+	width: 98px;
+	height: 98px;
+	float: left;
+	text-align: center;
+	line-height: 98px;
+	border-radius: 10px;
+	cursor: pointer;
+}
+
+.my_img_box .arrow {
+	background: #FFFFFF;
+	width: 15px;
+	height: 50px;
+	margin-top: 25px;
+	border: none;
+	text-align: center;
+	line-height: 50px;
+	cursor: pointer;
+	background: #D9D4CF;
+	position: absolute;
+}
+
+.my_img_box .right {
+	margin-left: 2px;
+	right: 0;
+}
+
+#myReply .btn.insert {
+	background: #fff;
+	position: absolute;
+	bottom: 20px;
+	right: 25px;
+	width: 65px;
+	height: 34px;
+	border: none;
+	box-shadow: 0 0 5px #424242;
+	border-radius: 5px;
+	cursor: pointer;
+}

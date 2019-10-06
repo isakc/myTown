@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC 
+"-//mybatis.org/DTD/Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="townstalks">
+	<select id="talkList" parameterType="PageVo" resultType="TownstalkVo">
+		SELECT no, subject, title, contents, repPicture, guNo, dongNo, regDate, userNo, nickname, userGu, userDong, profile
+		FROM(
+			SELECT no, subject, title, contents, repPicture, guNo, dongNo, regDate, userNo, nickname, userGu, userDong, profile, rownum r
+			FROM(
+				SELECT talk.no no, subject, title, contents, repPicture, talk.guNo guno, talk.dongNo dongno, talk.regDate regDate, u.no userNo, u.nickname nickname, u.guno userGu, u.dongno userDong, profile
+				FROM townstalks talk, users u
+				WHERE (talk.userno = u.no AND talk.guno = #{addressNo})
+					OR (talk.userno = u.no AND talk.dongno = #{addressNo})
+				ORDER BY no DESC
+			)
+		)
+		WHERE r BETWEEN #{start} AND #{end}
+	</select>
+	<select id="talkListByCategory" parameterType="PageVo" resultType="TownstalkVo">
+		SELECT no, subject, title, contents, repPicture, guNo, dongNo, regDate, userNo, nickname, userGu, userDong, profile
+		FROM(
+			SELECT no, subject, title, contents, repPicture, guNo, dongNo, regDate, userNo, nickname, userGu, userDong, profile, rownum r
+			FROM(
+				SELECT talk.no no, subject, title, contents, repPicture, talk.guNo guno, talk.dongNo dongno, talk.regDate regDate, u.no userNo, u.nickname nickname, u.guno userGu, u.dongno userDong, profile
+				FROM townstalks talk, users u
+				WHERE (talk.userno = u.no AND talk.guno = #{addressNo} AND subject = #{category}) 
+					OR (talk.userno = u.no AND talk.dongno = #{addressNo} AND subject = #{category})
+				ORDER BY no DESC
+			)
+		)
+		WHERE r BETWEEN #{start} AND #{end}
+	</select>
+	<select id="selectTotalsim" parameterType="int" resultType="int">
+		SELECT COUNT(no)
+		FROM townstalks
+		WHERE guno = #{addressNo} OR dongno = #{addressNo}
+	</select>
+	<select id="selectTotalByCategory" parameterType="PageVo" resultType="int">
+		SELECT COUNT(no)
+		FROM townstalks
+		WHERE (guno = #{addressNo} AND subject = #{category})
+			OR (dongno = #{addressNo} AND subject = #{category})
+	</select>
+	
+		<!-- best talk -->
+	<select id="bestTalkList" parameterType="PageVo" resultType="TownstalkVo">
+		SELECT no, subject, title, reppicture, guno, dongno, regdate, nickname, usergu, userdong, likeCount
+			FROM(
+			SELECT t.no no, subject, title, reppicture, t.guno guNo, t.dongno dongNo, t.regdate regDate, nickname, u.guno userGu, u.dongno userDong, likeCount, rownum r
+			FROM(					
+				SELECT contentno, COUNT(*) likeCount
+				FROM likes
+				GROUP BY contentno
+				) l, townstalks t, users u
+			WHERE (l.contentno = t.no AND likeCount >= 5 AND u.no = t.userno AND t.guno = #{addressNo})
+				OR (l.contentno = t.no AND likeCount >= 5 AND u.no = t.userno AND t.dongno = #{addressNo})
+			ORDER BY no DESC
+			)
+		WHERE r between #{start} AND #{end}
+	</select>
+	<select id="bestTalkSelectTotal" parameterType="int" resultType="int">
+		SELECT COUNT(t.no) 
+		FROM(					
+			SELECT contentno, COUNT(*) likeCount
+			FROM likes
+			GROUP BY contentno
+			) l, townstalks t, users u
+		WHERE (l.contentno = t.no AND likeCount >= 5 AND u.no = t.userno AND t.guno = #{addressNo})
+			OR (l.contentno = t.no AND likeCount >= 5 AND u.no = t.userno AND t.dongno = #{addressNo})
+	</select>
+	
+	
+		<!-- select one -->
+	<select id="selectOne" parameterType="int" resultType="TownstalkVo">
+		SELECT talk.no no, subject, title, contents, repPicture, talk.guNo guno, talk.dongNo dongno, talk.regDate regDate, u.nickname nickname, u.guno userGu, u.dongno userDong, profile
+		FROM townstalks talk, users u
+		WHERE talk.userno = u.no AND talk.no = #{talkNo}
+	</select>
+
+	<select id="selectList" parameterType="PageVo" resultType="TownstalkVo">
+		SELECT  no, subject, title, contents, repPicture, userNo, guNo, dongNo, regDate
+		FROM(SELECT  no, subject, title, contents, repPicture, userNo, guNo, dongNo, regDate, rownum r
+			 FROM(SELECT  no, subject, title, contents, repPicture, userNo, guNo, dongNo, regDate
+				  FROM townstalks
+			 	  ORDER BY no DESC))
+		WHERE r BETWEEN #{start} AND #{end}
+	</select>
+
+	<select id="selectTotal" resultType="int">
+	SELECT COUNT(no)
+	FROM townstalks
+	</select>
+	
+	<select id="selectTownstalkUser" resultType="TownstalkVo" parameterType="int">
+		SELECT no, subject, title, contents, repPicture, userNo, guNo, dongNo, regDate
+		FROM townstalks
+		WHERE userNo=#{userNo}
+	</select>
+
+	<select id="selectTownstalk" resultType="TownstalkVo" parameterType="int">
+		SELECT no, subject, title, contents, repPicture, userNo, guNo, dongNo, regDate
+		FROM townstalks
+		WHERE no=#{no}
+	</select>
+
+</mapper>

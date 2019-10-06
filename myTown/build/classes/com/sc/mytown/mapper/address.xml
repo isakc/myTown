@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC 
+"-//mybatis.org/DTD/Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="address">
+
+	<select id="selectAddressOne"  resultType="AddressVo" parameterType="int">
+		SELECT no, name, parentsNo, lat, lng, regDate
+		FROM Address
+		WHERE no=#{no}
+	</select>
+	<select id="selectGu" resultType="AddressVo">
+		select no, name, parentsNo, lat, lng, regdate
+		FROM address
+		WHERE parentsNo is null
+	</select>
+	
+	<select id="selectByName" parameterType="String" resultType="AddressVo">
+		SELECT no, name, parentsNo, lat, lng, regdate
+		FROM address
+		WHERE name = #{name}
+	</select>
+	
+	<select id="selectByGu" parameterType="int" resultType="AddressVo">
+		SELECT no, name, parentsNo, lat, lng, regdate
+		FROM address
+		WHERE parentsNo = #{parentsNo}
+	</select>
+	
+	<select id="guSelectList" resultType="AddressVo">
+		SELECT no, name, parentsNo, lat, lng, regDate
+		FROM address
+		where parentsno IS NULL
+		ORDER BY no ASC
+	</select>
+	
+	<select id="dongSelectList" resultType="AddressVo" parameterType="int">
+		SELECT no, name, parentsNo, lat, lng, regDate
+		FROM address
+		where parentsno = #{guNo}
+		ORDER BY no ASC
+	</select>
+
+</mapper>

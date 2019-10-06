@@ -1,0 +1,123 @@
+#talk {
+    position:relative;
+    width: 880px;
+    margin-bottom: 10px;
+    float: right;
+}
+#talkCategory {
+    width: 420px;
+    height: 40px;
+    /*overflow: hidden;*/
+}
+#talkCategory li {
+    background: #ffccb3;
+    width: 100px;
+    height: 40px;
+    font-size: 20px;
+    text-align: center;
+    line-height: 40px;
+    float: left;
+    cursor:pointer;
+    transition: .2s ease;
+    margin-right:2px;
+}
+#talkCategory li:hover {
+    background: #d0d0d0;
+    text-decoration: underline;
+}
+#talkCategory li.on {
+    background: #424242;	
+    border:none;
+    text-decoration: underline;
+}
+
+
+#talkList li {
+    position: relative;
+    width: 880px;
+    height: 120px;
+    margin: 10px 0;
+    background:#ffccb3;
+}
+#talkList a {
+    background: transparent;
+    display: block;
+    width: 880px;
+    height: 120px;
+    color: #424242;
+    transition: .2s ease;
+}
+
+#talkList a>img {
+    margin: 10px;
+}
+#talkList a:hover {
+    background: #80DEEA;
+}
+
+
+#talkList a:hover .title {
+    color: blue;
+    /*text-decoration: underline;*/
+}
+#talkList span, #talkList .title {
+    position:absolute;
+    padding-left: 10px;
+}
+#talkList .talkType {
+    display: inline-block;
+    left: 110px;
+    font-size: 15px;
+    margin: 5px 0;
+    width:60px;
+}
+#talkList .bestTalk.none {
+	display: none;
+}
+#talkList .bestTalk {
+    width: 20px;
+    height: 20px;
+    float: left;
+    margin-right: 5px;
+    background: url(/img/icon_picture_b.png) no-repeat center;
+}
+#talkList .title {
+    left: 110px;
+    top: 45px;
+    margin:10px 0;
+    font-size:20px;
+}
+#talkList .regdate {
+    left: 110px;
+    bottom: 10px;
+    font-size: 12px;
+}
+#talkList .user {
+    width: 150px;
+    height: 35px;
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+}
+#talkList .nickname {
+    display: inline-block;
+    height: 35px;
+    line-height: 35px;
+    float: right;
+    right: 40px;
+    font-size: 15px;
+}
+#talkList .user_type {
+    float: right;
+    right: 0;
+    /*top: -5px;*/
+ /*background: blue;*/
+}
+.user_type img {
+    border: 5px solid transparent;
+    border-radius: 25px;
+}
+.user_type img.towner {
+    border: 5px solid #c019dc;
+    border-radius: 25px;
+}

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC 
+"-//mybatis.org/DTD/Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="usercategories">
+
+	<insert id="insertUser" parameterType="UserCategoryVo">
+	INSERT INTO usercategories(no, userNo,hashTagNo ,regDate) 
+	VALUES(usercategories_seq.nextval,#{userNo},#{hashTagNo},sysdate )
+	</insert>
+ 
+    <select id="selectUserHashList" resultType="UserCategoryVo" parameterType="int">
+		select no, userNo, hashTagNo, regDate
+		FROM usercategories
+		WHERE no=#{no}
+	</select>
+
+	<delete id="deleteUserHash" parameterType="int">
+	DELETE usercategories
+	WHERE userNo=#{userNo}
+			AND NO BETWEEN 1 AND 25
+	</delete>
+	
+	
+</mapper>

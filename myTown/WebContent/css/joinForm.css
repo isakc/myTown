@@ -1,0 +1,266 @@
+#joinBox {
+	display: none;
+	background: rgba(150, 150, 150, .8);
+	position: fixed;
+	width: 100%;
+	height: 100%;
+}
+#joinScroll {
+	background: white;
+	width: 617px;
+	height: 700px;
+	margin: auto;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -350px;
+	margin-left: -308.5px;
+}
+
+#joinForm {
+	width: 617px;
+	height: 650px;
+	overflow-y: scroll;
+}
+
+#joinForm ul {
+	width: 499px;
+	height: 70px;
+}
+
+#joinForm td.border_bottom_clean {
+	border-bottom: 0;
+}
+
+#infoForm {
+	width: 600px;
+	position: relative;
+}
+
+.main_info, .add_data {
+	border-top: 5px solid #cccccc;
+	border-bottom: 5px solid #cccccc;
+	width: 600px;
+	text-align: center;
+	line-height: 40px;
+	font-size: 30px;
+}
+
+#userPicture {
+	width: 140px;
+	height: 140px;
+	padding: 10px;
+	margin: 10px 0;
+}
+
+#userPicture .profile_upload {
+	opacity:0;
+	position: relative;
+}
+#userPicture .upload_file {
+	/*background: blue;
+	width: 150px;
+	height: 150px;
+	border: none;
+	border-radius: 75px;
+	text-align: center;
+	line-height: 150px;
+	font-size: 30px;
+	cursor: pointer;
+	position: absolute;
+	*/
+	position:absolute;
+	width:150px;
+	height:150px;
+	border-radius:75px;
+	border-color:transparent;
+	font-size:25px;
+	background:hotpink;
+	color:#fff;
+	cursor:pointer;
+}
+
+.user_info {
+	width: 400px;
+	height: 175px;
+	padding: 0 10px;
+	position: absolute;
+	top: 50px;
+	right: 10px;
+}
+
+.user_info .info {
+	height: 30px;
+	margin: 10px 0;
+	line-height: 28px;
+}
+
+.info label {
+	font-size: 14px;
+}
+
+.user_info .user_input, .address .address_input {
+	height: 20px;
+	padding: 2.5px 5px;
+	border-radius: 5px;
+	font-family: "NotoSansKR", sans-serif;
+}
+
+.user_info .user_input {
+	width: 250px;
+	position: absolute;
+	left: 105px;
+}
+
+.address {
+	padding: 10px;
+	position: relative;
+}
+
+.address_info, .preferred_info {
+	font-size: 15px;
+}
+
+.address_input {
+	margin: 5px;
+	padding: 6px;
+	border-radius: 10px;
+}
+
+.address .zipcode {
+	width: 60px;
+	text-align: center;
+}
+
+.address .add {
+	position: relative;
+	width: 300px;
+	top: 40px;
+	left: -204px;
+}
+
+.address .add.detail_add {
+	width: 150px;
+	top: 0;
+	left: 320px;
+}
+
+.preferred, .add_info {
+	padding: 10px;
+}
+
+.info {
+	font-size: 15px;
+	margin: 5px 0 0;
+}
+
+.preferred li {
+	font-size: 11px;
+	float: left;
+	padding: 5px;
+}
+
+.preferred li input {
+	width: 13px;
+	height: 13px;
+}
+
+.preferred li>label {
+	width: 11px;
+	height: 11px;
+	line-height: 11px;
+}
+
+#joinForm .td {
+	border-right: 1px solid #cccccc;
+	border-bottom: 1px solid #cccccc;
+	padding: 5px;
+	width: 70px;
+	height: 70px;
+}
+
+.preferred h3.fst_category {
+	width: 70px;
+	height: 50px;
+	margin: 10px 0;
+	text-align: center;
+	line-height: 25px;
+}
+
+#joinForm .preferred .sec_category, #joinForm .add_info .value {
+	width: 715.5px;
+	vertical-align: middle;
+	border-right: 0;
+}
+
+.preferred .sec_category {
+	width: 715.5px;
+	height: 70px;
+}
+
+#joinForm .add_info .td {
+	height: auto;
+	position: relative;
+}
+
+#joinForm .add_info .value {
+	width: 499px;
+	position: relative;
+}
+
+.line_height {
+	position: absolute;
+	top: 50%;
+	left: 5px;
+	margin-top: -7.5px;
+}
+
+.add_info .value select {
+	height: 20px;
+	font-size: 15px;
+}
+
+.add_info .value em {
+	margin: 0 5px;
+}
+
+.add_info .value {
+	height: 100px;
+	vertical-align: top;
+}
+
+.add_info .add, .add_info .add.detail_add {
+	position: relative;
+	left: 0;
+	top: 0;
+}
+
+#insertBtn {
+	width: 617px;
+	border-top: 1px solid #cccccc;
+	padding: 10px 0;
+	text-align: center;
+	position: absolute;
+	bottom: 0;
+}
+
+#insertBtn .insert_btn, #insertBtn .join_cancel_btn, .address .add_btn {
+	background: #cff0da;
+	outline: 0;
+	margin: 0 2.5px;
+	border: 1px solid transparent;
+	border-radius: 10px;
+	cursor: pointer;
+	font-size: 15px;
+	height: 30px;
+}
+
+.btn:hover {
+	box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2),
+		0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.bg {
+	width: 100%;
+	height: 100%;
+}

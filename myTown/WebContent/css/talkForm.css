@@ -1,0 +1,68 @@
+#form {
+    width: 1080px;
+    margin: auto;
+    padding:10px 0;
+    box-shadow: 0 0 1px #424242;
+}
+#formHeader {
+    width: 1080px;
+    height: 65px;
+    position: relative;
+}
+.talk_category {
+    width: 102px;
+}
+.talk_category select {
+    font-size: 20px;
+    padding-bottom: 5px;
+}
+.title_line,.hashtag_line {
+    width: 970px;
+    position: absolute;
+    top: 0;
+    left: 110px;
+}
+.hashtag_line {
+    top: 35px;
+}
+#formHeader .label {
+    display: inline-block;
+    width: 100px;
+    height: 28px;
+    text-align: center;
+    line-height: 25px;
+    font-size: 18px;
+}
+#formHeader .input_text {
+    width: 840px;
+    margin: 0;
+    padding: 0 5px;
+    font-size: 20px;
+}
+#formFooter {
+    text-align: right;
+    height: 30px;
+}
+.btn_form {
+    display: block;
+    width: 100px;
+    height: 30px;
+    float: right;
+    border: none;
+    box-shadow: 0 0 2px #424242;
+    cursor: pointer;
+    font-family: "NotoSansKR",sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    color: #424242;
+    margin-left: 10px;
+    transition: .2s ease;
+}
+a.btn_form{
+    text-align: center;
+    line-height: 30px;
+    text-decoration: none;
+}
+.btn_form:hover {
+    background: aqua;
+}

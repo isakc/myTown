@@ -1,0 +1,237 @@
+@CHARSET "UTF-8";
+	 
+	 #wrap {
+            width:1080px;
+            margin:auto;
+        }
+     #top {
+     		width:1080px;
+     		height:110px;
+     		margin-top:10px;
+     		/*position: relative;*/
+     }
+     #category {
+     		width:94px;
+    		height:104px;
+    		border:3px solid transparent;
+    		float:left;
+     }
+
+     button:focus{
+	 	outline: none;
+	 }
+     /*topInfo시작*/
+       #topInfo {
+     		width:520px;
+    		height:110px;
+    		float:left;
+    		margin-left:10px;
+    		position:relative;
+     }
+     
+     #spotAddress {
+     		width:520px;
+    		height:20px;
+    		font-size:20px;
+    		font-weight:700;
+    		line-height:18px;
+     }
+     #topInfo>h2 {
+     		width:520px;
+    		height:50px;
+    		font-size : 40px;
+    		font-weight:900;
+    		line-height:50px;
+    		margin-bottom:7px;
+    		background:#D8E6E7;
+     }
+     
+     #gradeIn {
+     		width:220px;
+    		height:30px;
+    		line-height:10px;
+    		float:left;
+    		font-size : 30px;
+    		color :#F6B352;
+     }
+     #stampIn {
+     		width:280px;
+    		height:30px;
+    		line-height:10px;
+    		float:left;
+    		color : #a8dba8;
+    		font-size : 30px;
+     }
+     #stampIn>i {
+     		color : #a8dba8;
+    		font-size : 30px;
+     }
+     
+     #color {
+     		color:black;
+     		font-size : 20px;
+     }
+     
+      /*topUser 시작*/
+     #topUser {
+     		width:150px;
+    		height:110px;
+    		float:left;
+    		margin-left:10px;
+     }
+     
+     #stamp {
+     		width:140px;
+    		height:36px;
+    		font-size : 26px;
+     		text-align: center;
+     		line-height:36px;
+     		margin-top:22px;
+     		border:2px solid #C5C6B6;	
+     		border-radius:10px 10px 0 0;	
+     		cursor:pointer;
+     		color: #a8dba8;
+     		float:left;
+     }
+   
+     #stamp:hover {
+     		color:#3b8686;
+     }
+     #stamp .fa-check-circle {
+     display: none;
+     }
+     #stamp .fa-check-circle-o {
+     display: inline;
+     }
+     #stamp.stampOn .fa-check-circle {
+     display: inline;
+     }
+     #stamp.stampOn .fa-check-circle-o {
+     display: none;
+     }
+     #stamp.stampOn {
+        	background:#C5C6B6;
+			color:#3b8686;
+     }
+
+     #grade {
+     		width:140px;
+    		height:36px;
+    		font-size : 26px;
+    		color :#F6B352;
+     		text-align: center;
+     		line-height:36px;
+     		border:2px solid #C5C6B6;	
+     		border-radius:0 0 10px 10px;
+     		cursor:pointer;	
+     		float:left;
+     		position:relative;
+     }
+     
+     	 
+		#grade .before_rating {
+			background-image:url("../img/starOff.png");
+			background-size:100% 100%;
+			width:125px;
+			height:25px;
+			position:absolute;
+			top:5px;
+			left:7.5px;	
+		}
+		
+		#grade .after_rating {
+			background-image:url("../img/starOn.png");
+			background-size:100% 100%;
+			width:0;
+			height:25px;
+			position:absolute;
+			top:5px;
+			left:7.5px;	
+		}
+		#grade .after_rating:hover {
+			width:125px;
+		}
+     /*파운더정보 시작*/
+     #topFounder {
+     		width:120px;
+    		height:110px;
+    		float:left;
+    		margin-left:170px;
+     }
+     
+     #founderP {
+     		width:80px;
+    		height:80px;
+     		border-radius:40px;
+     		line-height:80px;
+     		margin:5px 20px;;
+     }
+     #founderN {
+     		width:120px;
+    		height:18px;
+    		color : #424242;
+    		font-weight: bold;
+    		font-size : 18px;
+     		text-align:center;
+     }
+     
+     /*사진, 지도 시작*/
+     #middle {
+     		width:1080px;
+     		height:290px;
+     		/*margin-bottom:10px;*/
+     		position: relative;     }
+  
+     #box {
+            width: 750px;
+            height: 250px;
+            position:absolute;
+            background:#f8ecc9;
+            top:10px;
+            left:30px;
+			overflow: hidden;
+        }
+        
+     #imgs {
+            width: 2490px;
+            height: 250px;
+            position: absolute;
+      }
+
+      #imgs>img {
+      		width:250px;	
+    		height:250px;
+            float: left;
+            cursor:pointer;
+       }
+       
+     
+     #map { /*지도*/
+     		width:256px;
+    		height:246px;
+    		background :#fff;
+    		position: absolute;
+    		right:0;
+     		top:10px;
+     		border:2px solid #a8dba8;
+     		border-radius:10px;
+     		cursor:pointer;
+     }
+     
+     .photoArrow {
+     		width:30px;	
+    		height:250px;
+    		background :#a8dba8;
+    		color:#fff;
+    		position: absolute;
+    		top: 10px;
+    		font-size : 30px;
+    		border:none;
+    		cursor:pointer;
+     }
+     .a1{
+     		left:0;
+     }
+     .a2 {
+     		right:270px; 
+     }

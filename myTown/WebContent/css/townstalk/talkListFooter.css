@@ -1,0 +1,105 @@
+#talkListFooter {
+    width: 880px;
+    padding:10px 0;
+    position: relative;
+    overflow: hidden;
+}
+#talkListFooter button,#writeBtn {
+    background: #FFFFFF;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #424242;
+    background:#ffccb3;
+}
+#talkListFooter button {
+    height: 30px;
+    line-height: 30px;
+    border: none;
+    cursor: pointer;
+}
+#listType,#writeBtn {
+    position: absolute;
+    top: 10px;
+}
+#listType {
+    width: 103px;
+    float: left;
+}
+#writeBtn {
+    display: block;
+    width: 45px;
+    height: 20px;
+    padding: 5px;
+    text-decoration: none;
+    text-align: center;
+    line-height: 20px;
+    right: 0;
+}
+#page {
+	width:680px;
+	height:30px;
+	margin: auto;
+	position: relative;
+}
+#paging {
+    width: 680px;
+    height: 30px;
+    margin: auto;
+    text-align: center;
+    font-size: 25px;
+    position: relative;
+}
+
+#paging .pageOne,#paging i {
+    display: inline-block;
+    min-width: 30px;
+    height: 30px;
+    margin: 5px;
+    text-decoration: none;
+    color: #000000;
+    cursor: pointer;
+    transition: .2s ease;
+}
+#paging .now_page {
+	background: #f0f0f0;
+	display: inline-block;
+	min-width:30px;
+}
+#paging .pageOne:hover,#paging i:hover{
+    color: lightblue;
+}
+
+#search {
+    margin-top: 15px;
+    width: 880px;
+    height: 30px;
+    position: relative;
+}
+#search>select {
+    height: 30px;
+    border: 2px solid #424242;
+    border-radius: 3px;
+}
+#searchBar {
+    width: 700px;
+    margin: 0 5px;
+    padding: 5px;
+    border:2px solid #424242;
+    border-radius: 3px;
+}
+#search .btn {
+    display: block;
+    background: #ffffff;
+    color:#424242;
+    text-decoration: none;
+    width: 40px;
+    height: 26px;
+    float: right;
+    position: absolute;
+    top: 0;
+    right: 0;
+    text-align: center;
+    line-height: 26px;
+    border:2px solid #424242;
+    border-radius: 3px;
+}

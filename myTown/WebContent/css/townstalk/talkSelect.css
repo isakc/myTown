@@ -1,0 +1,68 @@
+#townSelect,#talk {
+    margin-top: 10px;
+}
+#towns {
+    border:none;
+    font-size: 30px;
+    font-weight: 700;
+}
+#townSelect {
+    width: 190px;
+    float: left;
+    text-align: center;
+    position: relative;
+}
+.dongMenu {
+	font-weight: 900;
+	background:#ffccb3;
+}
+#dong {
+    margin-top: 10px;
+    width: 190px;
+}
+#dong li{
+	width: 190px;
+    font-size: 18px;
+    margin:5px 0;
+    line-height: 22px;
+    cursor: default;
+}
+#dong li{
+    display: inline-block;
+    text-decoration: none;
+    border-bottom:3px solid transparent;
+    transition: .2s ease;
+}
+#dong li:hover {
+    padding-bottom: 0;
+}
+
+#dong .sub {
+    width: 190px;
+    height:auto;
+    overflow: hidden;
+    transition: .2s ease;
+}
+#dong .sub_li {
+	background:red;
+    width: 190px;
+    font-size:18px;
+    position: relative;
+    background:#fefefe;
+    cursor:pointer;
+}
+#dong .sub_li:hover>span {
+	color: #F8BBD0;
+}
+#dong .sub_li.on{
+	box-shadow: 0 0 5px #424242;
+}
+#dong .sub_li.on>span{
+	color:#ffc2d7;
+}
+#dong span {
+    display: inline-block;
+    width: 90px;
+    position: relative;
+    transition: .1s ease;
+}

@@ -1,0 +1,153 @@
+#yourReply>ul>li {
+	width: 1080px;
+	margin: 40px 0;
+}
+
+.reply_header {
+	width: 1080px;
+	height: 100px;
+	border-bottom: 1px solid #424242;
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+#yourPhoto {
+	width: 100px;
+	height: 100px;
+	float: left;
+}
+
+#yourPhoto>img {
+	width: 80px;
+	height: 80px;
+	border-radius: 40px;
+	margin: 10px;
+}
+
+#nameNdate {
+	width: 780px;
+	height: 100px;
+	margin-left: 20px;
+	float: left;
+}
+
+.yourHashtag {
+	width: 780px;
+	height: 20px;
+	float: left;
+	font-size: 20px;
+	font-weight: 500;
+	color: #3b8686;
+}
+
+.like {
+	width: 100px;
+	height: 100px;
+	float: left;
+	margin-left: 80px;
+}
+
+.yourName {
+	font-size: 30px;
+	font-weight: 900;
+	margin: 5px 0 10px 0;
+}
+
+.regdate {
+	font-size: 16px;
+	color: #548687;
+	margin-top: 5px;
+}
+
+.like .r_icon {
+	width: 100px;
+	height: 70px;
+	border: none;
+	cursor: pointer;
+	background: #fff;
+}
+
+.r_icon i {
+	font-size: 50px;
+	color: #3b8686;
+	line-height: 90px;
+	text-align: center;
+}
+
+.like .r_num {
+	width: 100px;
+	height: 30px;
+	font-size: 20px;
+	font-weight: 900;
+	color: #3b8686;
+	text-align: center;
+}
+/*여기까지 header*/
+.your_content {
+	width: 1050px;
+	min-height: 60px;
+	padding: 15px 5px;
+	line-height: 25px;
+}
+/*여기까지 content*/
+
+/*사진박스*/
+.your_img_box {
+	width: 1080px;
+	height: 120px;
+	margin-bottom: 15px;
+}
+
+.imgs {
+	width: 1030px;
+	height: 120px;
+	float: left;
+	overflow: hidden;
+}
+
+.your_img_box ul {
+	width: 1030px;
+	height: 120px;
+	transition: .2s ease;
+}
+
+.your_img_box ul li {
+	width: 120px;
+	height: 120px;
+	margin-left: 5px;
+	float: left;
+}
+
+.your_img_box ul img {
+	width: 120px;
+	height: 120px;
+	border-radius: 20px;
+}
+
+#yourReply .your_img_box .arrow {
+	background: #D9D4CF;
+	width: 25px;
+	height: 60px;
+	margin-top: 30px;
+	border: none;
+	text-align: center;
+	line-height: 30px;
+	cursor: pointer;
+	float: left;
+}
+
+#yourReply .your_img_box .right {
+	display: none;
+}
+
+.your_img_box ul.none {
+	display: none;
+}
+
+/*버튼*/
+.btn_box {
+	width: 1080px;
+	height: 20px;
+	padding: 10px 0;
+	text-align: right;
+	border-top: 1px solid #424242;
+}

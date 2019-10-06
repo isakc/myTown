@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE configuration PUBLIC 
+"-//mybatis.org/DTD/Config 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+
+<configuration>
+
+
+<settings>
+   <setting name = "jdbcTypeForNull" value = "NULL"/>
+</settings>
+
+	<typeAliases>
+		<typeAlias alias = "AddHashTagVo"
+		type="com.sc.mytown.vo.AddHashTagVo"/>
+		<typeAlias alias = "AddressVo"
+		type="com.sc.mytown.vo.AddressVo"/>
+		<typeAlias alias = "GradeVo"
+		type="com.sc.mytown.vo.GradeVo"/>
+		<typeAlias alias = "HashTagVo"
+		type="com.sc.mytown.vo.HashTagVo"/>
+		<typeAlias alias = "HitVo"
+		type="com.sc.mytown.vo.HitVo"/>
+		<typeAlias alias = "LikeVo"
+		type="com.sc.mytown.vo.LikeVo"/>
+		<typeAlias alias = "MenuVo"
+		type="com.sc.mytown.vo.MenuVo"/>
+		<typeAlias alias = "PictureVo"
+		type="com.sc.mytown.vo.PictureVo"/>
+		<typeAlias alias = "ReplyVo"
+		type="com.sc.mytown.vo.ReplyVo"/>
+		<typeAlias alias = "SpotVo"
+		type="com.sc.mytown.vo.SpotVo"/>	
+		<typeAlias alias = "StampVo"
+		type="com.sc.mytown.vo.StampVo"/>
+		<typeAlias alias = "TownstalkVo"
+		type="com.sc.mytown.vo.TownstalkVo"/>
+		<typeAlias alias = "TypeVo"
+		type="com.sc.mytown.vo.TypeVo"/>
+		<typeAlias alias = "UserVo"
+		type="com.sc.mytown.vo.UserVo"/>
+		<typeAlias alias = "UserCategoryVo"
+		type="com.sc.mytown.vo.UserCategoryVo"/>
+		<typeAlias alias = "PageVo" 
+		type="com.sc.mytown.vo.PageVo"/>
+	</typeAliases>
+
+   <environments default="development">
+      <environment id ="development">
+         <transactionManager type="JDBC"/>
+         <dataSource type="JNDI">
+            <property name="data_source"
+            value="java:comp/env/jdbc/oraclexe"/>
+         </dataSource>
+      </environment>
+   </environments>
+   
+   <!-- 맵퍼 파일 경로 설정 -->
+   <mappers>
+      <mapper resource="com/sc/mytown/mapper/addHashTags.xml"/>
+      <mapper resource="com/sc/mytown/mapper/address.xml"/>
+      <mapper resource="com/sc/mytown/mapper/grades.xml"/>
+      <mapper resource="com/sc/mytown/mapper/hashTags.xml"/>
+      <mapper resource="com/sc/mytown/mapper/hits.xml"/>
+      <mapper resource="com/sc/mytown/mapper/likes.xml"/>
+      <mapper resource="com/sc/mytown/mapper/menu.xml"/>
+      <mapper resource="com/sc/mytown/mapper/pictures.xml"/>
+      <mapper resource="com/sc/mytown/mapper/replies.xml"/>
+      <mapper resource="com/sc/mytown/mapper/spots.xml"/>
+      <mapper resource="com/sc/mytown/mapper/stamps.xml"/>
+      <mapper resource="com/sc/mytown/mapper/townstalks.xml"/>
+      <mapper resource="com/sc/mytown/mapper/types.xml"/>
+      <mapper resource="com/sc/mytown/mapper/userCategories.xml"/>
+      <mapper resource="com/sc/mytown/mapper/users.xml"/>
+   </mappers>
+</configuration>

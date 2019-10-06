@@ -1,0 +1,80 @@
+#townInfo {
+    width: 1080px;
+    height: 400px;
+    overflow: hidden;
+    margin-top:10px;
+}
+#newUser {
+    width: 190px;
+    height:400px;
+    margin-right:10px;
+    float: left;
+}
+#newUser span {
+    display: block;
+    height:20px;
+    margin-bottom: 5px;
+    font-size: 20px;
+    text-align: center;
+    font-weight:900;
+    background:#ffccb3;
+}
+#newUser ul {
+    width:180px;
+}
+#newUser ul>li {
+    width: 188px;
+    height:30px;
+    line-height: 30px;
+    font-size: 15px;
+    border-bottom: 1px solid #dadbdb;
+}
+#newUser li>img {
+    border-radius: 25px;
+    margin: 0 5px;
+}
+/* new towner */
+
+#rankAux {
+    width: 880px;
+    height: 400px;
+    float: left;
+}
+#rankBox {
+	width: 442px;
+    height: 400px;
+    float: left;
+
+}
+#Nwagon {
+	width: 433px;
+	height: 400px;
+	float: left;
+	margin-left:5px;
+}
+   
+#townRankBoard, .town_rank { /*1, 2*/
+    width: 442px;
+    height:200px;
+}
+
+svg { /*3*/
+    width: 433px;
+    padding-top:40px;
+}
+
+
+#Nwagon>h3, #townRankBoard>h3, .town_rank>h3 { /*타이틀*/
+	width: 435px;
+	height:20px;
+    margin-bottom: 5px;
+    font-size: 20px;
+    text-align: center;
+    font-weight:900;
+    background:#a8dba8;
+}
+
+.town_rank ul {
+    width: 400px;
+    height: 200px;
+}
